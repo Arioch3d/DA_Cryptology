@@ -1,6 +1,5 @@
 import string
 
-# Define the alphabet
 ALPHABET = string.ascii_uppercase
 
 def letter_to_index(letter):
@@ -40,7 +39,6 @@ def decrypt(ciphertext, a, b):
             plaintext += letter
     return plaintext
 
-# everything below i did myself, using the 'encrypt' and 'decrypt' functions from the code above that i found online
 print("Welcome to the Affine Cypher!")
 
 crypt_again = True

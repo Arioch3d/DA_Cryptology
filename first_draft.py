@@ -68,60 +68,58 @@ P = ((C - K2)/K1) mod 26
 
 
 
-import string
+# import string
 
-# Define the alphabet
-ALPHABET = string.ascii_uppercase
+# # Define the alphabet
+# ALPHABET = string.ascii_uppercase
 
-def letter_to_index(letter):
-    return ALPHABET.index(letter)
+# def letter_to_index(letter):
+#     return ALPHABET.index(letter)
 
-def index_to_letter(index):
-    return ALPHABET[index]
+# def index_to_letter(index):
+#     return ALPHABET[index]
 
-def mod_inverse(a, m):
-    for i in range(1, m):
-        if (a * i) % m == 1:
-            return i
-    return None
+# def mod_inverse(a, m):
+#     for i in range(1, m):
+#         if (a * i) % m == 1:
+#             return i
+#     return None
 
-def encrypt(plaintext, a, b):
-    ciphertext = ""
-    for letter in plaintext:
-        if letter in ALPHABET:
-            x = letter_to_index(letter)
-            encrypted_index = (a * x + b) % len(ALPHABET)
-            ciphertext += index_to_letter(encrypted_index)
-        else:
-            ciphertext += letter
-    return ciphertext
+# def encrypt(plaintext, a, b):
+#     ciphertext = ""
+#     for letter in plaintext:
+#         if letter in ALPHABET:
+#             x = letter_to_index(letter)
+#             encrypted_index = (a * x + b) % len(ALPHABET)
+#             ciphertext += index_to_letter(encrypted_index)
+#         else:
+#             ciphertext += letter
+#     return ciphertext
 
-def decrypt(ciphertext, a, b):
-    plaintext = ""
-    a_inv = mod_inverse(a, len(ALPHABET))
-    if a_inv is None:
-        return "Error: 'a' is not coprime to 26"
-    for letter in ciphertext:
-        if letter in ALPHABET:
-            y = letter_to_index(letter)
-            decrypted_index = (a_inv * (y - b)) % len(ALPHABET)
-            plaintext += index_to_letter(decrypted_index)
-        else:
-            plaintext += letter
-    return plaintext
+# def decrypt(ciphertext, a, b):
+#     plaintext = ""
+#     a_inv = mod_inverse(a, len(ALPHABET))
+#     if a_inv is None:
+#         return "Error: 'a' is not coprime to 26"
+#     for letter in ciphertext:
+#         if letter in ALPHABET:
+#             y = letter_to_index(letter)
+#             decrypted_index = (a_inv * (y - b)) % len(ALPHABET)
+#             plaintext += index_to_letter(decrypted_index)
+#         else:
+#             plaintext += letter
+#     return plaintext
 
-# Example usage
-plaintext = "HELLO WORLD"
-a, b = 5, 13  # Key values
+# # Example usage
+# plaintext = "HELLO WORLD"
+# a, b = 5, 13  # Key values
 
-encrypted = encrypt(plaintext, a, b)
-decrypted = decrypt(encrypted, a, b)
+# encrypted = encrypt(plaintext, a, b)
+# decrypted = decrypt(encrypted, a, b)
 
-print(f"Plaintext: {plaintext}")
-print(f"Encrypted: {encrypted}")
-print(f"Decrypted: {decrypted}")
-
-
+# print(f"Plaintext: {plaintext}")
+# print(f"Encrypted: {encrypted}")
+# print(f"Decrypted: {decrypted}")
 
 
 
@@ -133,9 +131,12 @@ print(f"Decrypted: {decrypted}")
 
 
 
-"""
-Charles' code:
-this is my encrypt code:
+
+
+
+#Charles' code:
+#this is my encrypt code:
+
 def encrypt_cipher(plaintext, key1, key2):
     text = plaintext
     ciphertext = ""
@@ -158,7 +159,12 @@ def encrypt_cipher(plaintext, key1, key2):
             ciphertext = ciphertext + char
     return ciphertext
 
-"""
+
+text = "hello"
+key1 = 5
+key2 = 13
+ciphertext = encrypt_cipher(text, key1,key2)
+print(ciphertext)
 
 
 
