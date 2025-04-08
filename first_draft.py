@@ -160,7 +160,7 @@ def encrypt_cipher(plaintext, key1, key2):
     return ciphertext
 
 
-text = "hello"
+text = "hello world"
 key1 = 5
 key2 = 13
 ciphertext = encrypt_cipher(text, key1,key2)
