@@ -58,8 +58,8 @@ while True:
         b = int(input("Please choose an additive value (1-26):"))
         plaintext = decrypt(cyphertext, a, b)
         print(f"Your decrypted message is: {plaintext}")
-     
-    
+
+
     crypt_again = input("Would you like to encrypt or decrypt another message? (yes/no)").lower()
     if crypt_again == "no":
         another_crypt = False
@@ -67,5 +67,9 @@ while True:
         break
     elif crypt_again == "yes":
         continue
+    else:
+        print("You didn't enter 'yes' or 'no'.")
+        
+
     
     
